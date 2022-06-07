@@ -1,0 +1,16 @@
+.asset-detail-container {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-auto-flow: row dense;
+}
+
+.asset-description-section {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.asset-description-section p, span {
+    text-align: left;
+}

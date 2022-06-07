@@ -1,0 +1,20 @@
+.list-of-images-container {
+    display: table;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.list-of-images-grid-container {
+    column-count: 4;
+    column-gap: 0.8rem;
+    column-width: 20rem;
+}
+
+.list-of-images-grid-item {
+    padding-bottom: 1rem;
+}
+
+.list-of-images-grid-item img {
+    width: 100%;
+    height: auto;
+}

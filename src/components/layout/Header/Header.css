@@ -1,0 +1,91 @@
+.header-container {
+    padding-bottom: 20px;
+}
+
+.header-items {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 3rem 0 3rem;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.header-logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    flex: 1;
+    padding-bottom: 50px;
+    margin-right: -10px;
+}
+
+.header-logo-container img {
+    align-self: flex-end;
+}
+
+.header-logo-container span {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    max-width: 8rem;
+}
+
+.header-message-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;    
+    align-items: center;
+    flex: 1;
+    padding-bottom: 50px;
+}
+
+.header-message-container img {
+    align-self: flex-start;
+}
+
+.header-message-container span {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    max-width: 10rem;
+}
+
+.header-message-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.header-background {
+    position: absolute !important;
+    width: 100%;
+    height: 30%;
+    z-index: 0;
+}
+
+@media screen and (max-width: 470px) {
+    
+    .header-message-container {
+        justify-content: center;
+    }
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .header-app-logo {
+        animation: header-app-logo-spin infinite 10s linear;
+    }
+}
+
+@keyframes header-app-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
