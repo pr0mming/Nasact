@@ -1,0 +1,3 @@
+# Ignore folder for lint
+node_modules/*
+dist/*

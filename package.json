@@ -1,6 +1,6 @@
 {
   "name": "nasact",
-  "description": "small app for simulate the original image and library nasa website",
+  "description": "Small app for simulate the original image and library NASA website 😎",
   "private": true,
   "version": "1.0.0",
   "main": "index.js",
@@ -10,7 +10,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "eslint-plugin-react-hooks": "^4.5.0",
@@ -19,7 +21,6 @@
     "react-tsparticles": "^2.0.6",
     "tsparticles": "^2.0.6",
     "tsparticles-engine": "^2.0.6",
-    "vanta": "^0.5.22",
     "wouter": "^2.8.0-alpha.2"
   },
   "devDependencies": {

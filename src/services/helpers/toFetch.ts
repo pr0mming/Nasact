@@ -1,20 +1,20 @@
 export async function toFetch<T>(
-    url: string,
-    config: RequestInit = {}
+	url: string,
+	config: RequestInit = {}
 ): Promise<T | null> {
 
-    try {
+	try {
 
-        const _response = await fetch(url, config)
-        return await _response.json() as T
+		const _response = await fetch(url, config)
+		return await _response.json() as T
 
-    } catch(error) {
+	} catch(error) {
 
-        console.error("[!] Unexpected error when try to dispatch the HTTP request:")
-        console.log(error)
+		console.error("[!] Unexpected error when try to dispatch the HTTP request:")
+		console.log(error)
 
-        return null
+		return null
 
-    }
+	}
 
 }
