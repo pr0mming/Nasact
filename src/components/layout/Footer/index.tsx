@@ -1,5 +1,5 @@
 import React from "react";
-import './Footer.css';
+import './style.css';
 
 export default function Footer() {
 
@@ -18,7 +18,7 @@ export default function Footer() {
             <span className="footer-code-section">
                 You can follow the source code in &nbsp;
                 <a className="hyperlink" href="https://github.com" target="_blank">
-                    <img src="assets/github_logo.png" width={ 32 } />
+                    <img src="/github_logo.png" width={ 32 } />
                 </a>
             </span>
           </div>

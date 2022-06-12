@@ -3,5 +3,6 @@ This is my first React App it's a replica about the original [NASA Image and Lib
 
 # Technologies used
 - React JS 18+
-- Vanta JS
+- Particle TS
+- TypeScript
 - Wouter
