@@ -20,6 +20,7 @@
       "@/components/*": ["src/components/*"],
       "@/pages/*": ["src/pages/*"],
       "@/services/*": ["src/services/*"],
+      "@/context/*": ["src/context/*"],
       "@/config/*": ["src/config/*"]
     }
   },

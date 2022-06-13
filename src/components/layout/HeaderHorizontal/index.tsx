@@ -10,7 +10,7 @@ const particlesInit = async () => {
 	await loadFull(tsParticles)
 }
 
-export default function Header() {
+export default function HeaderHorizontal() {
 
 	return (
 		<section className="header-container">
@@ -22,27 +22,21 @@ export default function Header() {
 			<div className="header-items">
 				<div className="header-message-items">
 					<span className="header-message-container">
-						<section className="header-message-text">
-							<span>
-								<strong>Developed in</strong>
-								<img className="header-app-logo" src="/react_logo.svg" width={ 50 } alt="React JS" />❤️
-							</span>
-						</section>
+						<SearchBar/>
 					</span>
 					<span className="header-logo-container">
 						<section className="header-logo-text">
 							<span>
 								<strong>NASA Image and Video Library</strong>
 							</span>
-						</section>
+						</section>            
 						<Link href="/">
 							<a>
 								<img src="/nasa_logo.png" alt="NASA Logo" width={ 120 } />
 							</a>
 						</Link>
 					</span>
-				</div>       
-				<SearchBar/>
+				</div>
 			</div>
 		</section>    
 	)

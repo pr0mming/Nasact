@@ -1,14 +1,9 @@
 import React from "react"
 import { Link } from "wouter"
-import { PictureType } from "../../context/types/SearchEngineType"
 import "./style.css"
+import { ListOfImagesProps } from "./types/ListOfImagesProps"
 
-interface ListOfImagesType {
-  pictures: PictureType[];
-  loading: boolean
-}
-
-export default function ListOfImageVideoLibrary({ props }: { props: ListOfImagesType }) {
+export default function ListOfImageVideoLibrary({ props }: { props: ListOfImagesProps }) {
 
 	if (props.loading) {
 

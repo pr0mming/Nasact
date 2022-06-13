@@ -13,7 +13,7 @@ export const SearchEngineProvider = ({ children }: { children: ReactNode }) => {
 	return (
 		<SearchEngineContext.Provider value={{
 			pictures,
-			setPictures
+			setPictures	
 		}}>
 			{ children }
 		</SearchEngineContext.Provider>

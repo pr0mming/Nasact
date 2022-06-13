@@ -4,7 +4,7 @@ This is my first React App it's a replica about the original [NASA Image and Lib
 This app use the [NASA Open API](https://api.nasa.gov/)
 
 # Technologies used :zap:
-- React JS 18+
+- React 18+
 - Particles TS
 - TypeScript
 - Wouter

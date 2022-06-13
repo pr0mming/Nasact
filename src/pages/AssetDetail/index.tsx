@@ -2,86 +2,94 @@ import React, { useEffect, useState } from "react"
 import { getAsset } from "@/services/getAsset"
 import { getAssetMetadata } from "@/services/getAssetMetadata"
 import "./index.css"
+import { AssetDetailViewType } from "./types/AssetDetailViewType"
+import { RouteComponentProps } from "wouter"
+import DefaultTheme from "@/components/themes/DefaultTheme"
 
-export default function AssetDetail(params: any) {
+export default function AssetDetail(params: RouteComponentProps) {
 
-	// const { nasaId } = params;
+	const { nasaId } = params.params
 
-	// const [ detailData, setDetailData ] = useState({
-	//     title: '',
-	//     description: '',
-	//     creationDate: '',
-	//     centerPlace: '',
-	//     keywords: [],
-	//     resources: []
-	// });
+	const [ detailData, setDetailData ] = useState<AssetDetailViewType>()
 
-	// useEffect(() => {
+	useEffect(() => {
 
-	//     if (nasaId) {
+		if (nasaId) {
 
-	//         Promise.all([
-	//             getAssetMetadata({ nasaId }),
-	//             getAsset({ nasaId })
-	//         ])
-	//         .then(([metadata, resources]) => {
-    
-	//             setDetailData({
-	//                 title: metadata.title,
-	//                 description: metadata.description,
-	//                 creationDate: metadata.creationDate,
-	//                 centerPlace: metadata.centerPlace,
-	//                 keywords: metadata.keywords,
-	//                 resources: resources
-	//             });
-    
-	//         });
+			Promise.all([
+				getAssetMetadata(nasaId),
+				getAsset(nasaId)
+			])
+				.then(([metadata, resources]) => {
 
-	//     }
+					let _data: AssetDetailViewType
 
-	// }, [nasaId]);
+					if (metadata) {
 
-	// if (nasaId) {
+						_data = {
+							title: metadata["XMP:Title"],
+							description: metadata["XMP:Description"],
+							creationDate: metadata["XMP:CreateDate"],
+							centerPlace: metadata["AVAIL:Center"],
+							keywords: metadata["AVAIL:Keywords"],
+							resource: resources ? resources[0] : ""
+						}
 
-	//     return (
-	//         <div className="asset-detail-container">
-	//             <section>
-	//                 {
-	//                     detailData.resources.map((resource, i) => {
-	//                         return (
-	//                             <div key={i}>
-	//                                 <img src={resource} alt="Full Pic" width="150" />
-	//                             </div>                            
-	//                         )
-	//                     })
-	//                 }
-	//             </section>
-	//             <section className="asset-description-section">
-	//                 <button>Download</button>
-	//                 <h2>
-	//                     <strong>
-	//                         { detailData.title }
-	//                     </strong>
-	//                 </h2>
-	//                 <span>
-	//                     <strong>NASA ID: </strong>{ nasaId }
-	//                 </span>
-	//                 <p>{ detailData.description }</p>
-	//                 <span>
-	//                     <strong>Date Created: </strong>{ detailData.creationDate }
-	//                 </span>
-	//                 <span>
-	//                     <strong>Center: </strong>{ detailData.centerPlace }
-	//                 </span>
-	//                 <span>
-	//                     <strong>Keywords: </strong>{ detailData.keywords.join(',') }
-	//                 </span>
-	//             </section>
-	//         </div>
-	//     );
+						setDetailData(_data)
 
-	// }
+					}	            
+	
+				})
 
-	return (null)
+		}
+
+	}, [nasaId])
+
+	if (nasaId) {
+
+		return (
+			<DefaultTheme>				
+				<div className="asset-detail-container">
+					<div className="asset-detail-grid-container">
+						<section className="asset-detail-resource-preview">
+							<img src={detailData?.resource} alt="Full Pic" width="150" />
+						</section>
+						<section className="asset-description-section">
+							<button className="asset-detail-button-download">
+							Download
+								<img src="/download_icon.png" alt="Download" width="45" />
+							</button>
+							<span className="asset-detail-resource-url">
+								<label>{ detailData?.resource }</label>
+							</span>
+							<h2 className="asset-detail-title">
+								<strong>
+									{ detailData?.title }
+								</strong>
+							</h2>
+							<span>
+								<strong>NASA ID: </strong>{ nasaId }
+							</span>
+							<span>
+								<p>{ detailData?.description }</p>
+							</span>
+							<span>
+								<strong>Date Created: </strong>{ detailData?.creationDate }
+							</span>
+							<span>
+								<strong>Center: </strong>{ detailData?.centerPlace }
+							</span>
+							<span>
+								<strong>Keywords: </strong>{ detailData?.keywords.sort().join(", ") }
+							</span>
+						</section>
+					</div>
+				</div>
+			</DefaultTheme>
+		)
+
+	}
+
+	return null
 
 }

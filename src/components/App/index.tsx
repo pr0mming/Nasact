@@ -1,10 +1,10 @@
 import React from "react"
 import { Route, Switch } from "wouter"
 import "./style.css"
-import AssetDetail from "../../pages/AssetDetail"
 import Home from "../../pages/Home"
 import NoMatch from "../../pages/NoMatch"
 import { SearchEngineProvider } from "../../context/SearchEngineContext"
+import AssetDetail from "@/pages/AssetDetail"
 
 export default function App() {
 
