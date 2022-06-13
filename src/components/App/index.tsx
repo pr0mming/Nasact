@@ -5,6 +5,7 @@ import Home from "../../pages/Home"
 import NoMatch from "../../pages/NoMatch"
 import { SearchEngineProvider } from "../../context/SearchEngineContext"
 import AssetDetail from "@/pages/AssetDetail"
+import SearchResults from "@/pages/SearchResults"
 
 export default function App() {
 
@@ -21,6 +22,10 @@ export default function App() {
 						<Route
 							path="/detail/:nasaId"
 							component={ AssetDetail }/>
+
+						<Route
+							path="/search-results/:keyword/:page"
+							component={ SearchResults }/>
 
 						<Route>
 							<NoMatch/>

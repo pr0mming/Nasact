@@ -20,8 +20,8 @@ export default function HeaderHorizontal() {
 				url="/particle_background_config.json" 
 				init={ particlesInit } />
 			<div className="header-items">
-				<div className="header-message-items">
-					<span className="header-message-container">
+				<div className="header-search-bar-items">
+					<span className="header-search-bar-container">
 						<SearchBar/>
 					</span>
 					<span className="header-logo-container">

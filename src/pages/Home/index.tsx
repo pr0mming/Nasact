@@ -22,10 +22,12 @@ export default function Home() {
 
 					const _pictures = data
 						.filter((links) => (links.links ?? []).length)
-						.map((_pic) => {
+						.map((pic) => {
+							new Image().src = (pic.links ?? [])[0].href
+
 							return {
-								nasaId: _pic.data[0].nasa_id,
-								url: _pic.links ? _pic.links[0].href : "",
+								nasaId: pic.data[0].nasa_id,
+								url: (pic.links ?? [])[0].href
 							}
 						})
 

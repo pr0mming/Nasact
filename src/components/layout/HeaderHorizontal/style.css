@@ -37,27 +37,27 @@
     max-width: 8rem;
 }
 
-.header-message-container {
+.header-search-bar-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: start;    
     align-items: center;
     flex: 1;
     padding-bottom: 50px;
 }
 
-.header-message-container img {
+.header-search-bar-container img {
     align-self: flex-start;
 }
 
-.header-message-container span {
+.header-search-bar-container span {
     display: flex;
     align-items: center;
     font-size: 1rem;
     max-width: 10rem;
 }
 
-.header-message-items {
+.header-search-bar-items {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -72,7 +72,7 @@
 
 @media screen and (max-width: 470px) {
     
-    .header-message-container {
+    .header-search-bar-container {
         justify-content: center;
     }
 

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "wouter"
 import "./style.css"
 import { ListOfImagesProps } from "./types/ListOfImagesProps"
@@ -9,7 +9,7 @@ export default function ListOfImageVideoLibrary({ props }: { props: ListOfImages
 
 		return (
 			<span>
-				<img src="/loading_spinner.gif" alt="Loading" width={50}/>
+				<img src="/loading_spinner.svg" alt="Loading" width={50}/>
 			</span>
 		)
 
